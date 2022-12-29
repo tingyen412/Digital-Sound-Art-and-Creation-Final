@@ -1,0 +1,124 @@
+#N canvas 401 97 955 758 12;
+#X floatatom 106 565 5 0 0 0 - - - 0;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-lead2 128 float 3;
+#A 0 80 0 0 0 0 0 0 0 85 0 0 0 0 0 0 0 100 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 81 0 0 0 0 0 0 0 97 0 0 0 0 0 0 0 93 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 83 0 0 0 0 0 0 0 92 0 0 0 0 0 0 0 88 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 83 0 0 0 0 0 0 0 90 0 0 0 0 0 0 0 87 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0;
+#X coords 0 70 128 95 200 140 1 0 0;
+#X restore 507 181 graph;
+#X obj 527 363 array set \$0-lead2;
+#X obj 106 541 array get \$0-lead2;
+#X obj 106 588 sel 0;
+#X obj 218 674 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 36 566 5 0 0 0 - - - 0;
+#X obj 36 589 spigot;
+#X obj 52 365 array size \$0-lead2;
+#X obj 34 416 %;
+#X floatatom 52 389 5 0 0 0 - - - 0;
+#X obj 53 308 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#N canvas 128 128 450 250 (subpatch) 0;
+#X array \$0-lead2-duration 128 float 3;
+#A 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 2 0 1 0 2 0 1
+0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3
+0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 2 0 1 0 2 0 1 0 3 0 0
+0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0 3 0 0 0;
+#X coords 0 -1 128 4 200 140 1 0 0;
+#X restore 720 181 graph;
+#X obj 678 363 array set \$0-lead2-duration;
+#X obj 250 541 array get \$0-lead2-duration;
+#X floatatom 250 565 5 0 0 0 - - - 0;
+#X obj 65 33 inlet;
+#X obj 250 588 spigot;
+#X text 20 6 time \, start_time \, loop_number \, A \, D \, S \, R
+;
+#X floatatom 37 102 5 0 0 0 time - - 0;
+#X obj 246 60 loadbang;
+#X obj 190 81 i \$1;
+#X obj 342 80 i \$2;
+#X obj 449 562 i \$3;
+#X obj 487 562 i \$4;
+#X obj 526 562 i \$5;
+#X obj 566 562 i \$6;
+#X floatatom 449 586 5 0 0 0 - - - 0;
+#X floatatom 487 586 5 0 0 0 - - - 0;
+#X floatatom 526 586 5 0 0 0 - - - 0;
+#X floatatom 566 586 5 0 0 0 - - - 0;
+#X floatatom 35 234 5 0 0 0 - - - 0;
+#X floatatom 342 104 5 0 0 0 loop_num - - 0;
+#X floatatom 190 106 5 0 0 0 start - - 0;
+#X obj 447 78 array size \$0-lead2;
+#X floatatom 447 102 5 0 0 0 - - - 0;
+#X obj 447 59 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 35 257 sel -1;
+#X floatatom 35 281 5 0 0 0 - - - 0;
+#X obj 36 127 expr if ($f1 >= $f2 && $f1 <= ($f2 + ($f3 * $f4)) \,
+$f1 - $f2 \, -1), f 66;
+#X obj 67 333 outlet;
+#X obj 531 532 loadbang;
+#X floatatom 607 586 5 0 0 0 - - - 0;
+#X obj 243 635 pack 0 0 0 0 0 0 0 0;
+#X obj 35 504 % 32;
+#X obj 248 674 clone track_adsr 32;
+#X obj 527 340 inlet;
+#X obj 678 339 inlet;
+#X obj 607 562 f \$7;
+#X connect 0 0 4 0;
+#X connect 0 0 7 1;
+#X connect 0 0 17 1;
+#X connect 3 0 0 0;
+#X connect 4 1 43 1;
+#X connect 6 0 7 0;
+#X connect 7 0 43 0;
+#X connect 8 0 10 0;
+#X connect 9 0 3 0;
+#X connect 9 0 14 0;
+#X connect 9 0 44 0;
+#X connect 10 0 9 1;
+#X connect 11 0 8 0;
+#X connect 11 0 40 0;
+#X connect 14 0 15 0;
+#X connect 15 0 17 0;
+#X connect 16 0 19 0;
+#X connect 16 0 36 0;
+#X connect 17 0 43 2;
+#X connect 19 0 39 0;
+#X connect 20 0 21 0;
+#X connect 20 0 22 0;
+#X connect 21 0 33 0;
+#X connect 22 0 32 0;
+#X connect 23 0 27 0;
+#X connect 24 0 28 0;
+#X connect 25 0 29 0;
+#X connect 26 0 30 0;
+#X connect 27 0 43 3;
+#X connect 28 0 43 4;
+#X connect 29 0 43 5;
+#X connect 30 0 43 6;
+#X connect 31 0 37 0;
+#X connect 32 0 39 2;
+#X connect 33 0 39 1;
+#X connect 34 0 35 0;
+#X connect 35 0 39 3;
+#X connect 36 0 34 0;
+#X connect 37 1 38 0;
+#X connect 38 0 9 0;
+#X connect 38 0 11 0;
+#X connect 39 0 31 0;
+#X connect 41 0 26 0;
+#X connect 41 0 25 0;
+#X connect 41 0 24 0;
+#X connect 41 0 23 0;
+#X connect 41 0 48 0;
+#X connect 42 0 43 7;
+#X connect 43 0 5 0;
+#X connect 43 0 45 0;
+#X connect 44 0 6 0;
+#X connect 46 0 2 0;
+#X connect 47 0 13 0;
+#X connect 48 0 42 0;
