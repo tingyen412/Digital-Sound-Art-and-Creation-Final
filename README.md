@@ -20,3 +20,9 @@ panoramix 1.6.0
 
 ## Demo Video link
 https://youtu.be/4lMbe5meD3A
+
+## p5js link
+https://editor.p5js.org/abcd2012212/sketches/nDIlvR-9W
+
+## Slide link
+https://docs.google.com/presentation/d/14CcVUZs1eejzxxRh7cO7VZo69CZ6HKlp2bagLtP79Bg/edit?usp=sharing
