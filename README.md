@@ -3,9 +3,13 @@
 
 ## Enviroment
 masOS Big Sur 11.7
+
 iOS 16.0.3
+
 blackhole 16ch
+
 Pd 0.52.2
+
 panoramix 1.6.0
 
 ## Run the code
